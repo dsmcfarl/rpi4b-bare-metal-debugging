@@ -5,13 +5,13 @@ if [ $(id -u) -ne 0 ]; then
   exit 1
 fi
 
-if [ $# -lt 1 ]; then
-  echo "no disk device specified"
+if [ $# -ne 1 ]; then
+  echo "usage: sdcard.sh <device>"
   exit 1
 fi
 
 if [ ! -d "build/boot" ]; then
-  echo "boot directory not found - run build.sh first"
+  echo "boot directory not found - run build.sh"
   exit 1
 fi
 
